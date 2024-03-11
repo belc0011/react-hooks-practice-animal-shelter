@@ -17,8 +17,8 @@ function Pet( {pet, onAdoptPet, isAdopted, setIsAdopted}) {
         </div>
       </div>
       <div className="extra content">
-        <button id={pet.id} className={!pet.isAdopted ? "ui disabled button" : "ui primary button"} >Already adopted</button>
-        <button id={pet.id} className={!pet.isAdopted ? "ui primary button" : "ui disabled button"} onClick={onAdoptPet} >Adopt pet</button>
+        {pet.isAdopted ? <button id={pet.id} className= "ui disabled button" >Already adopted</button> : null}
+        {!pet.isAdopted ? <button id={pet.id} className= "ui primary button" onClick={(event) => onAdoptPet(event.target.id)} >Adopt pet</button> : null}
       </div>
     </div>
   );

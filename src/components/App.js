@@ -26,7 +26,7 @@ function App() {
 
   function onAdoptPet(e) {
     const adoptedPet = pets.filter(pet => {
-      return pet.id === e.target.id;
+      return pet.id === e;
     })
     const updatedPets = pets.map(pet => {
       if (pet.id === adoptedPet[0].id) {
